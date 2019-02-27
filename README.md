@@ -15,3 +15,31 @@ yarn global add live-server
 ```
 live-server some-folder
 ```
+
+* Initialize package dependencies by yarn
+```
+yarn init
+```
+
+* Reinstall by yarn
+```
+yarn install
+```
+
+* Install babel cli
+```
+yarn global add babel-cli
+```
+
+* Install presets of babel
+```
+yarn add babel-preset-react babel-preset-env
+```
+
+## Hello React ##
+* JSX - Javascript XML
+
+* Compiled command by babel cli.
+```
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+```
