@@ -2,7 +2,9 @@
 
 var app = {
   title: "Indecision App",
-  subTitle: "First react app"
+  subTitle: "First react app",
+  // options: ["One", "Two"]
+  options: []
 };
 
 // JSX
@@ -14,12 +16,12 @@ var template = React.createElement(
     null,
     app.title
   ),
-  React.createElement(
+  app.subTitle && React.createElement(
     "p",
     null,
     app.subTitle
   ),
-  React.createElement(
+  app.options && app.options.length > 0 && React.createElement(
     "ol",
     null,
     React.createElement(
@@ -37,12 +39,20 @@ var template = React.createElement(
 
 var user = {
   name: "Shock Liang",
-  age: "37",
+  age: "35",
   location: "Taiwan"
 };
-var userName = "Shock";
-var userAge = 37;
-var userLocation = "Taiwan";
+
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      "p",
+      null,
+      "Location: ",
+      location
+    );
+  }
+}
 
 var template2 = React.createElement(
   "div",
@@ -50,20 +60,15 @@ var template2 = React.createElement(
   React.createElement(
     "h1",
     null,
-    user.name.toUpperCase()
+    user.name ? user.name.toUpperCase() : "Anonymous"
   ),
-  React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     "p",
     null,
     "Age: ",
     user.age
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location: ",
-    user.location
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById("app");
