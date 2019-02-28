@@ -43,3 +43,13 @@ yarn add babel-preset-react babel-preset-env
 ```
 babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
+
+* JSX only have a single root.
+Syntax error
+```js
+var tempalte = <h1>Something</h1><p>Others</p>;
+```
+Correct
+```js
+var tempalte = <div><h1>Something</h1><p>Others</p></div>
+```
