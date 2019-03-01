@@ -53,3 +53,10 @@ Correct
 ```js
 var tempalte = <div><h1>Something</h1><p>Others</p></div>
 ```
+
+* ES6 arrow function
+    * `arguments` object - no longer bound with arrow functions.
+    * `this` keyword - no longer bound.
+
+* Html attributes in JSX attributes converted
+    * `class` to be `className`
