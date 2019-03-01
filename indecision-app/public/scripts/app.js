@@ -43,7 +43,7 @@ var user = {
   location: "Taiwan"
 };
 
-function getLocation(location) {
+var getLocation = function getLocation(location) {
   if (location) {
     return React.createElement(
       "p",
@@ -52,7 +52,7 @@ function getLocation(location) {
       location
     );
   }
-}
+};
 
 var template2 = React.createElement(
   "div",

@@ -1,4 +1,4 @@
-var app = {
+const app = {
   title: "Indecision App",
   subTitle: "First react app",
   // options: ["One", "Two"]
@@ -6,7 +6,7 @@ var app = {
 };
 
 // JSX
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subTitle && <p>{app.subTitle}</p>}
@@ -19,19 +19,19 @@ var template = (
   </div>
 );
 
-var user = {
+const user = {
   name: "Shock Liang",
   age: "35",
   location: "Taiwan"
 };
 
-function getLocation(location) {
+const getLocation = location => {
   if (location) {
     return <p>Location: {location}</p>;
   }
-}
+};
 
-var template2 = (
+const template2 = (
   <div>
     <h1>{user.name ? user.name.toUpperCase() : "Anonymous"}</h1>
     {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
@@ -39,6 +39,6 @@ var template2 = (
   </div>
 );
 
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
 
 ReactDOM.render(template, appRoot);
