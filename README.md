@@ -36,6 +36,16 @@ yarn global add babel-cli
 yarn add babel-preset-react babel-preset-env
 ```
 
+* Uninstall global packages
+```
+yarn global remove babel-cli live-server
+```
+
+* Run script by yarn
+```
+yarn run some-script-name
+```
+
 ## Hello React ##
 * JSX - Javascript XML
 
