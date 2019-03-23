@@ -70,3 +70,7 @@ var tempalte = <div><h1>Something</h1><p>Others</p></div>
 
 * Html attributes in JSX attributes converted
     * `class` to be `className`
+
+* SCSS using `BEM` naming convention.
+    * Block Element Modifier
+    * http://getbem.com/naming/
