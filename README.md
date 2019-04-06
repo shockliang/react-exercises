@@ -74,3 +74,9 @@ var tempalte = <div><h1>Something</h1><p>Others</p></div>
 * SCSS using `BEM` naming convention.
     * Block Element Modifier
     * http://getbem.com/naming/
+
+
+## Redux ##
+* Actions
+    * Then an object that gets send to the store.
+    * Naming convention using upper case and underscore to separate the second word. e.g. INCREMENT_OTHER
