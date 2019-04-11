@@ -80,3 +80,8 @@ var tempalte = <div><h1>Something</h1><p>Others</p></div>
 * Actions
     * Then an object that gets send to the store.
     * Naming convention using upper case and underscore to separate the second word. e.g. INCREMENT_OTHER
+
+* Reducer
+    * Reducer are pure function.
+        * Pure function meaing no interactive with member variables or global variables that only interactive with local scope variable.
+    * Never change state or action.
