@@ -85,3 +85,10 @@ var tempalte = <div><h1>Something</h1><p>Others</p></div>
     * Reducer are pure function.
         * Pure function meaing no interactive with member variables or global variables that only interactive with local scope variable.
     * Never change state or action.
+
+## Higher Order Component (HOC) ##
+* A component (HOC) that renders another component.
+* Reuse code.
+* Render hjacking
+* Prop manipulation
+* Abstract state
