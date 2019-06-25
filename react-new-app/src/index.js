@@ -3,14 +3,22 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 const NoteApp = () => {
-  const notesData = JSON.parse(localStorage.getItem("notes")) || [];
-  const [notes, setNotes] = useState(notesData);
+  const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
   useEffect(() => {
+    console.log("fetch notes data at begin.");
+    const notesData = JSON.parse(localStorage.getItem("notes")) || [];
+    if (notesData) {
+      setNotes(notesData);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("save notes data.");
     localStorage.setItem("notes", JSON.stringify(notes));
-  });
+  }, [notes]);
 
   const addNote = e => {
     e.preventDefault();
@@ -46,25 +54,33 @@ const NoteApp = () => {
   );
 };
 
-// const App = props => {
-//   const [count, setCount] = useState(props.count);
-//   const [text, setText] = useState("");
+const App = props => {
+  const [count, setCount] = useState(props.count);
+  const [text, setText] = useState("");
 
-//   useEffect(() => {});
+  useEffect(() => {
+    console.log("This should only run once!");
+  }, []);
 
-//   return (
-//     <div>
-//       <p>
-//         The current {text || "count"} is {count}
-//       </p>
-//       <button onClick={() => setCount(count + 1)}>+1</button>
-//       <button onClick={() => setCount(count - 1)}>-1</button>
-//       <button onClick={() => setCount(props.count)}>reset</button>
-//       <input value={text} onChange={e => setText(e.target.value)} />
-//     </div>
-//   );
-// };
+  useEffect(() => {
+    console.log("useEffect ran");
+    document.title = count;
+  }, [count]);
 
+  return (
+    <div>
+      <p>
+        The current {text || "count"} is {count}
+      </p>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount(count - 1)}>-1</button>
+      <button onClick={() => setCount(props.count)}>reset</button>
+      <input value={text} onChange={e => setText(e.target.value)} />
+    </div>
+  );
+};
+
+// ReactDOM.render(<App count={10} />, document.getElementById("root"));
 ReactDOM.render(<NoteApp />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
