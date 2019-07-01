@@ -21,7 +21,6 @@ const NoteApp = () => {
   return (
     <NotesContext.Provider value={{ notes, dispatch }}>
       <h1>Notes</h1>
-      <p>Add Note</p>
       <NoteList />
       <AddNoteForm />
     </NotesContext.Provider>
