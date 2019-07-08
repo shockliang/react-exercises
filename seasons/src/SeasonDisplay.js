@@ -20,11 +20,15 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = ({ lat }) => {
   const season = getSeason(lat, new Date().getMonth());
+  const icon = season === "winter" ? "snowflake" : "sun";
+  const text =
+    season === "winter" ? "Burr, it is chilly" : "Lets hit the beach";
+
   return (
     <div>
-      <h1>
-        {season === "winter" ? "Burr, it is chilly" : "Lets hit the beach"}
-      </h1>
+      <i className={`${icon} icon`} />
+      <h1>{text}</h1>
+      <i className={`${icon} icon`} />
     </div>
   );
 };
