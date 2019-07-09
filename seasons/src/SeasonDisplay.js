@@ -10,6 +10,17 @@ import React from "react";
 // 0    1   2   3   4   5   6   7   8     9   10  11
 // Jan  Feb Mar Apr May Jun Jul Aug Sept  Oct Nov Dec
 
+const seasonConifg = {
+  summer: {
+    text: "Lets's hit the beach!",
+    iconName: "sun"
+  },
+  winter: {
+    text: "Burr it is cold!",
+    iconName: "snowflake"
+  }
+};
+
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     return lat > 0 ? "summer" : "winter";
@@ -20,15 +31,12 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = ({ lat }) => {
   const season = getSeason(lat, new Date().getMonth());
-  const icon = season === "winter" ? "snowflake" : "sun";
-  const text =
-    season === "winter" ? "Burr, it is chilly" : "Lets hit the beach";
-
+  const { text, iconName } = seasonConifg[season];
   return (
     <div>
-      <i className={`${icon} icon`} />
+      <i className={`${iconName} icon`} />
       <h1>{text}</h1>
-      <i className={`${icon} icon`} />
+      <i className={`${iconName} icon`} />
     </div>
   );
 };
