@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const songsReducer = () => {
   return [
     { title: "Some song 1", duration: "4:15" },
@@ -16,3 +18,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
 
   return selectedSong;
 };
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer
+});
